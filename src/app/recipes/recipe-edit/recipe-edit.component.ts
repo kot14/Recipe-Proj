@@ -67,7 +67,7 @@ export class RecipeEditComponent implements OnInit {
     let recipeName = '';
     let recipeImagePath = '';
     let recipeDescription = '';
-    let recipePrice = '';
+    let recipePrice = new FormArray([]);
     let recipeIngredients = new FormArray([]);
 
     if (this.editMode) {
@@ -83,7 +83,8 @@ export class RecipeEditComponent implements OnInit {
               'amount': new FormControl(ingredient.amount, [
                 Validators.required,
                 Validators.pattern(/^[1-9]+[0-9]*$/)
-              ])
+              ]),
+              'price': new FormControl(ingredient.price)
             })
           );
         }

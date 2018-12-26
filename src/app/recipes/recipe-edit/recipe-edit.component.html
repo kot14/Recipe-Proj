@@ -73,13 +73,11 @@
             formControlName="amount">
           </div>
           <div class="col-xs-2">
-            <ul class="list-group">
-              <li
-                class="list-group-item"
-                *ngFor="let ingredient of recipe.ingredients">
-                 hex
-              </li>
-            </ul>
+            <input
+            type="number"
+            class="form-control"
+            formControlName="price"
+            disabled>
           </div>
           <div class="col-xs-2">
             <button

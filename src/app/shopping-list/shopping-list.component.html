@@ -10,5 +10,18 @@
       >
       {{ingredient.name}} ({{ingredient.amount}}) (${{ingredient.price}})</a>
     </ul>
+    <div>
+      <ul class="list-group"
+          (click)="getTotalPrice()"
+          >
+          <a class="list-group-item">
+              Total Price:${{totalPrice}}
+          </a>
+      </ul>
+      <button class="btn btn-danger "
+        type="button"
+        (click)="onReset">
+        reset</button>
+  </div>
   </div>
 </div>

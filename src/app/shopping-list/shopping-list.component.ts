@@ -9,8 +9,11 @@ import { ShoppingListService } from './shopping-list.service';
   templateUrl: './shopping-list.component.html',
   styleUrls: ['./shopping-list.component.css']
 })
+
 export class ShoppingListComponent implements OnInit, OnDestroy {
   ingredients: Ingredient [];
+  totalPrice = 0 ;
+  reset = 0;
   private subscription: Subscription;
   constructor(private slService: ShoppingListService) { }
   
@@ -30,5 +33,15 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
+  getTotalPrice(){
+    this.ingredients.forEach(i => {
+      this.totalPrice += i.price * i.amount
+    });
+    return this.totalPrice;
+  }
+
+  onReset(){
+    this.totalPrice
+  }
 
 }
